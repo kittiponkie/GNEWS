@@ -1,0 +1,83 @@
+<template>
+    <div>
+        <md-toolbar id="test2" class="md-accent" md-elevation="0" style=" background-color:lightskyblue; margin:auto; padding:10px; ">
+        </md-toolbar>
+    </div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+    name: 'Ministry',
+    data(){
+        return{
+            id: []
+        }
+    },
+    methods:{
+        
+    },
+    async mounted(){
+        //print ministry all
+        axios.get(`https://gnewsapitesting.apps.go.th/gnews/ministry/list_ministry?dev=1999`).then(Response => {
+            //console.log(document.getElementById("test2"));
+            for(var i=0;i<Response.data.length;i++){
+                document.getElementById("test2").innerHTML += `
+                    <md-toolbar class="md-accent" id="a" md-elevation="0" style="background-color:blue; width:250px; height:200px">  
+                        <a href="/#/department/${Response.data[i].id}">
+                            <img src="${Response.data[i].pic}" style="margin:10px;" >
+                            <h3 style="text-align:center; margin:10px; color:white;">${Response.data[i].name_th}</h3>
+                        </a>
+                    </md-toolbar>
+                `;
+                this.id[i]= Response.data[i].url_json + "&dev=1999";
+            }     
+        });
+    }
+    
+}
+</script>
+
+<style>
+    .md-toolbar{
+        border-radius: 15px;
+        width: 71.5%;
+        margin-top: 150px;
+        margin-left: 300px;
+        overflow: auto;
+    }
+    .md-button{
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+        overflow: auto;
+    } 
+    #r{
+        border-radius: 15px;
+        width: 63%;
+        margin-top: 50px;
+        margin-left: 300px;
+        overflow: auto;    
+    }
+    #s{
+        overflow: auto;
+    }
+    #a{
+        border-radius: 15px;
+        width: auto;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: auto;
+    }
+    #b{
+        border-radius: 15px;
+        width: auto;
+        margin-top: 10px;
+        margin-left: auto;
+        overflow: auto;
+    }
+   
+</style>
+
+

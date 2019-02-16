@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.2",
+    "connect": "^3.6.6",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.11.0",
+    "email-verification": "^0.4.6",
+    "express": "^4.16.3",
+    "localforage": "^1.7.2",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.5",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.7",
+    "nodemon": "^1.17.5",
+    "npm": "^6.2.0",
+    "vue-google-auth": "^1.0.5",
+    "vue-localforage": "^0.2.5"
+  }
+}
